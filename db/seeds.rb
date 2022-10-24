@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+	applycss = Article.create([{title: "Welcome to ApplyCSS"}, {body: "This is where you can apply css to html"}])
+	applycss.save
