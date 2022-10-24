@@ -1,6 +1,6 @@
 # README
 
-ruby -v: Check Ruby version
+ ruby -v: Check Ruby version
 rails -v: Check rails version
 gem install rails: install Ruby on Rails
 rails new [appName]: Creates a Rails project with name [appName]
