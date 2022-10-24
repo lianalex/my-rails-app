@@ -1,20 +1,24 @@
 # README
 
-ruby -v: Check Ruby version
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-rails -v: Check rails version
+Things you may want to cover:
 
-gem install rails: install Ruby on Rails
+* Ruby version
 
-rails new [appName]: Creates a Rails project with name [appName]
+* System dependencies
 
-bundle install: Install the dependencies for the project
+* Configuration
 
-rake db:migrate: migrate the database schema
+* Database creation
 
-rake db:drop:_unsafe: delete the database
+* Database initialization
 
-rake db:setup: migrate the database schema and data
+* How to run the test suite
 
-rails server: Run project and check at localhost:3000
+* Services (job queues, cache servers, search engines, etc.)
 
+* Deployment instructions
+
+* ...
