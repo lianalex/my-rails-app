@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  root "articles#index"
+  root "pages#index"
 
-  get "/applycss", to: "articles#applycss"
-  get "/applyhtml", to: "articles#applyhtml"
-  get "/generator", to: "articles#generator"
-  get "/scraper", to: "articles#scraper"
+  get "/applycss", to: "pages#applycss"
+  get "/applyhtml", to: "pages#applyhtml"
+  get "/generator", to: "pages#generator"
+  get "/scraper", to: "pages#scraper"
 end

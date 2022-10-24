@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-	Article.create(title: "Welcome to ApplyCSS", body: "This is where you can apply css to html")
-	Article.create(title: "Welcome to ApplyHTML", body: "This is where you can apply html to css")
-	Article.create(title: "Welcome to Web Generator", body: "This is where you can genreate a static web page")
-	Article.create(title: "Welcome to Web Scraper", body: "This is where you can scrape a webpage")
+	Page.create(title: "ApplyCSS", link: "applycss")
+	Page.create(title: "ApplyHTML", link: "applyhtml")
+	Page.create(title: "Web Generator", link: "generator")
+	Page.create(title: "Web Scraper", link: "scraper")
 	
