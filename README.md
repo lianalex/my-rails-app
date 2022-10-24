@@ -10,11 +10,11 @@ rails new [appName]: Creates a Rails project with name [appName]
 
 bundle install: Install the dependencies for the project
 
-rails db:migrate: migrate the database schema
+rake db:migrate: migrate the database schema
 
-rails db:drop:_unsafe: delete the database
+rake db:drop:_unsafe: delete the database
 
-rails db:setup: migrate the database schema and data
+rake db:setup: migrate the database schema and data
 
 rails server: Run project and check at localhost:3000
 
