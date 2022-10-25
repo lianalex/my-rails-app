@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby -v: Check Ruby version
 
-Things you may want to cover:
+rails -v: Check rails version
 
-* Ruby version
+gem install rails: install Ruby on Rails
 
-* System dependencies
+rails new [appName]: Creates a Rails project with name [appName]
 
-* Configuration
+bundle install: Install the dependencies for the project
 
-* Database creation
+rake db:migrate: migrate the database schema
 
-* Database initialization
+rake db:drop:_unsafe: delete the database
 
-* How to run the test suite
+rake db:setup: migrate the database schema and data
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails server: Run project and check at localhost:3000
