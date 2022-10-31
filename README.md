@@ -6,7 +6,10 @@ rails -v: Check rails version
 
 gem install rails: install Ruby on Rails
 
-rails new [appName]: Creates a Rails project with name [appName]
+rails new [appName]: Creates a Rails project with name [appName]. </br>
+If you got error at this step, open the Gemfile in C:\Users\\[userName]\\[appName], change the line to gem 'tzinfo-data'
+
+change directory to [appName] folder 
 
 bundle install: Install the dependencies for the project
 
