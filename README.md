@@ -25,7 +25,7 @@ BEWARE: rake db:drop:_unsafe: delete the database
 2) Navigate to the repository in a terminal window
 -If on Mac uncomment/comment the tzinfo
 3) Run: bundle install
-4) Run: db:setup
-5) Run db:migrate
+4) Run: rake db:setup
+5) Run rake db:migrate
 6) Run: rails server
 7) Before pushing if on Mac recomment/uncomment the tzinfo
