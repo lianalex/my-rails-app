@@ -29,3 +29,6 @@ BEWARE: rake db:drop:_unsafe: delete the database
 5) Run rake db:migrate
 6) Run: rails server
 7) Before pushing if on Mac recomment/uncomment the tzinfo
+
+http://localhost:3000/pages/new: where the new generator form will be
+http://localhost:3000/pages/1: Access an indivdual generated page
