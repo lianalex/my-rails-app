@@ -25,9 +25,11 @@ BEWARE: rake db:drop:_unsafe: delete the database
 2) Navigate to the repository in a terminal window
 -If on Mac uncomment/comment the tzinfo
 3) $ bundle install
-4) $ rails importmap:install 
-5) $ rails turbo:install stimulus:install
-6) $ rake db:setup
-7) $ rake db:migrate
-8) $ rails server
-9) Before pushing if on Mac recomment/uncomment the tzinfo
+4) $ rake db:setup
+5) $ rake db:migrate
+6) $ rails server
+7) Before pushing if on Mac recomment/uncomment the tzinfo
+
+Might need these as well:
+A) $ rails importmap:install 
+B) $ rails turbo:install stimulus:install
