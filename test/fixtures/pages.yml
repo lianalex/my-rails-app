@@ -2,8 +2,12 @@
 
 one:
   title: MyString
-  body: MyText
+  bgColor: MyString
+  fontColor: MyString
+  fontStyle: MyString
 
 two:
   title: MyString
-  body: MyText
+  bgColor: MyString
+  fontColor: MyString
+  fontStyle: MyString
