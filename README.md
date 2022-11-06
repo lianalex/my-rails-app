@@ -24,12 +24,10 @@ BEWARE: rake db:drop:_unsafe: delete the database
 1) Download repository
 2) Navigate to the repository in a terminal window
 -If on Mac uncomment/comment the tzinfo
-3) Run: bundle install
-4) Run: rake db:setup
-5) Run rake db:migrate
-6) Run: rails server
-7) Before pushing if on Mac recomment/uncomment the tzinfo
-
-http://localhost:3000/pages/new: where the new generator form will be
-
-http://localhost:3000/pages/1: Access an indivdual generated page
+3) $ bundle install
+4) $ rails importmap:install 
+5) $ rails turbo:install stimulus:install
+6) $ rake db:setup
+7) $ rake db:migrate
+8) $ rails server
+9) Before pushing if on Mac recomment/uncomment the tzinfo
