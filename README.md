@@ -29,7 +29,3 @@ BEWARE: rake db:drop:_unsafe: delete the database
 5) $ rake db:migrate
 6) $ rails server
 7) Before pushing if on Mac recomment/uncomment the tzinfo
-
-Might need these as well:
-A) $ rails importmap:install 
-B) $ rails turbo:install stimulus:install
