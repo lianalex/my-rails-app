@@ -8,10 +8,6 @@ class CreatePages < ActiveRecord::Migration[7.0]
 	  t.string :borderStyle
 	  t.string :borderWidth
 	  t.string :borderColor
-	  t.string :aLink
-	  t.string :aVisited
-	  t.string :aHover
-	  t.string :aActive
 	  
       t.timestamps
     end

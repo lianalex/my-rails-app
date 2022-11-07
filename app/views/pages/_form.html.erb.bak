@@ -71,23 +71,8 @@
   </div>
   
   <div>
-    <%= form.label :aLink, "Unvisited Link Color:" %>
-	<%= form.color_field :aLink %><br>
-  </div>
-  
-  <div>
-    <%= form.label :aVisited, "Visited Link Color:" %>
-	<%= form.color_field :aVisited %><br>
-  </div>
-  
-  <div>
-    <%= form.label :aHover, "Hover Link Color:" %>
-	<%= form.color_field :aHover %><br>
-  </div>
-  
-  <div>
-    <%= form.label :aActive, "Active Link Color:" %>
-	<%= form.color_field :aActive %><br>
+    <%= form.label :borderColor, "Border Color:" %>
+	<%= form.color_field :borderColor %><br>
   </div>
   
   <div>

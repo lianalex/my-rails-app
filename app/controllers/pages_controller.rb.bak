@@ -49,11 +49,7 @@ class PagesController < ApplicationController
 		:fontStyle,
 		:borderStyle,
 		:borderWidth,
-		:borderColor,
-		:aLink,
-		:aVisited,
-		:aHover,
-		:aActive
+		:borderColor
 		)
     end
 end

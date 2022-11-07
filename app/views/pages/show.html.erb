@@ -1,16 +1,50 @@
-<a href="http://localhost:3000">HOME</a>
-<a href="http://localhost:3000/pages">MY PAGES</a>
-<h1><%= @page.title %></h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body 
+			{
+				background-color: <%= @page.bgColor %>;
+				color: <%= @page.fontColor %>;
+				font-family: <%= @page.fontStyle %>;
+				border-style: <%= @page.borderStyle %>;
+				border-width: <%= @page.borderWidth %>;
+				border-color: <%= @page.borderColor %>;
+			}
+			a:link
+			{
+				color: <%= @page.aLink %>;
+			}
+			a:visited
+			{
+				color: <%= @page.aVisited %>;
+			}
+			a:hover
+			{
+				color: <%= @page.aHover %>;
+			}
+			a:active
+			{
+				color: <%= @page.aActive %>;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="http://localhost:3000">HOME</a>
+		<a href="http://localhost:3000/pages">MY PAGES</a>
+		<h1><%= @page.title %></h1>
 
-<p>BACKGROUND COLOR: <%= @page.bgColor %></p>
+		<p>BACKGROUND COLOR: <%= @page.bgColor %></p>
 
-<p>FONT COLOR: <%= @page.fontColor %></p>
+		<p>FONT COLOR: <%= @page.fontColor %></p>
 
-<p>FONT STYLE: <%= @page.fontStyle %></p>
+		<p>FONT STYLE: <%= @page.fontStyle %></p>
 
-<%= link_to "EDIT", edit_page_path(@page) %><br>
+		<%= link_to "EDIT", edit_page_path(@page) %><br>
 
-<%= link_to "DELETE", page_path(@page), data: {
+		<%= link_to "DELETE", page_path(@page), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>
+	<body>
+</html>

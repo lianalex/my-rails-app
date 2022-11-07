@@ -26,10 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_06_032050) do
     t.string "borderStyle"
     t.string "borderWidth"
     t.string "borderColor"
-    t.string "aLink"
-    t.string "aVisited"
-    t.string "aHover"
-    t.string "aActive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
