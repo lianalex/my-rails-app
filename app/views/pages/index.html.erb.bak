@@ -1,5 +1,5 @@
-<a href="http://localhost:3000">HOME</a>
 <h1>My Pages</h1>
+<a href="http://localhost:3000">HOME</a>
 <a href="http://localhost:3000/pages/new">NEW</a>
 <h4> My Pages:</h4>
 <ul>
