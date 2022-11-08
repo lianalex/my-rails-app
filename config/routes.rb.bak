@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
-  root "pages#index"
+  root "links#index"
+  get "/pages/words", to: "words#index"
+
   
   resources :pages
+  resources :words
 end
