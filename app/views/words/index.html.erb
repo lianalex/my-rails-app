@@ -1,0 +1,10 @@
+<a href="http://localhost:3000">HOME</a>
+<h1>Words</h1>
+<a href="http://localhost:3000/words/new">NEW WORDS</a>
+<ul>
+  <% @words.each do |word| %>
+    <li>
+		<%= link_to word.title, word %>
+    </li>
+  <% end %>
+</ul>

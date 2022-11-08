@@ -1,0 +1,13 @@
+<h1><%= @word.title %></h1>
+
+<p><%= @word.p1 %></p>
+
+<p><%= @word.p2 %></p>
+
+<ul>
+  <li><%= link_to "EDIT", edit_word_path(@word) %></li>
+    <li><%= link_to "DELETE", word_path(@word), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
