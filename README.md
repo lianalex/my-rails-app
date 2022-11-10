@@ -29,3 +29,11 @@ BEWARE: rake db:drop:_unsafe: delete the database
 5) $ rake db:migrate
 6) $ rails server
 7) Before pushing if on Mac recomment/uncomment the tzinfo
+
+Process to update a model:
+1) rake db:drop:_unsafe
+2) Update db/schema.rb
+3) Update db/migrate/[model migration]
+4) Update app/controllers/[controller name]
+5) Update app/view/[your view]/_form.html.erb
+6) Update app/view/[your view]/show.html.erb
