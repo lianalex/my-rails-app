@@ -1,4 +1,5 @@
-<a href="http://localhost:3000/pages">HOME</a>
+<a href="http://localhost:3000/pages">MY PAGES</a>
+<a href="http://localhost:3000">HOME</a>
 <h1>Edit Page</h1>
 
 <%= render "form", page: @page %>

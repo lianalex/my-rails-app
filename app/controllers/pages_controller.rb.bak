@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
   def index
 	@pages = Page.all
+	@words = Word.all
   end
   def show
     @page = Page.find(params[:id])
+	@word = Word.all
   end
   def new
     @page = Page.new
@@ -49,7 +51,11 @@ class PagesController < ApplicationController
 		:fontStyle,
 		:borderStyle,
 		:borderWidth,
-		:borderColor
+		:borderColor,
+		:aLink,
+		:aVisited,
+		:aHover,
+		:aActive
 		)
     end
 end
