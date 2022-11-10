@@ -2,34 +2,98 @@
 <html>
 	<head>
 		<style>
-			body 
+			h1
 			{
-				background-color: <%= @page.bgColor %>;
+				text-align: center;
+				<% if @page.titleUnderline %>
+					<%= "text-decoration: underline;" %>
+				<% end %>
+				<% if @page.titleItalicize %>
+					<%= "font-style: italic;" %>
+				<% end %>
+				<% if @page.titlePosition == "Left" %>
+					<%= "text-align: left;" %>
+				<% end %>
+				<% if @page.titlePosition == "Center" %>
+					<%= "text-align: center;" %>
+				<% end %>
+				<% if @page.titlePosition == "Right" %>
+					<%= "text-align: right;" %>
+				<% end %>
+			}
+			.preview 
+			{
+				<% if @page.bgImageBool %>
+					<%= "background-image: url(" %>
+					<%= @page.bgImage %>
+					<%= ");" %>
+					
+					<% if !@page.bgImageTile %>
+						<%= "background-repeat: no-repeat;" %>
+						<%= "background-size: cover;" %>
+					<% end %>
+					<% if @page.bgImageScroll %>
+						<%= "background-attachment: scroll;" %>
+					<% end %>
+				<% end %>
+				
 				color: <%= @page.fontColor %>;
 				font-family: <%= @page.fontStyle %>;
+				text-shadow: <%= @page.textShadow %>px 
+					<%= @page.textShadow %>px 
+					<%= @page.shadowBlur %>px 
+					<%= @page.shadowColor %>;
 				border-style: <%= @page.borderStyle %>;
-				border-width: <%= @page.borderWidth %>;
+				border-width: <%= @page.borderWidth %>px;
 				border-color: <%= @page.borderColor %>;
+				border-radius: <%= @page.borderRounded %>%;
 			}
-			a:link
+			p
 			{
-				color: <%= @page.aLink %>;
+			<% if @page.textStyle == "Lowercase" %>
+				<%= "text-transform: lowercase;" %>
+			<% end %>
+			<% if @page.textStyle == "Uppercase" %>
+				<%= "text-transform: uppercase;" %>
+			<% end %>
+			<% if @page.textStyle == "Capitalize" %>
+				<%= "text-transform: capitalize;" %>
+			<% end %>			
 			}
-			a:visited
+			.previewBackground
 			{
-				color: <%= @page.aVisited %>;
+				background-color: <%= @page.bgColor %>;			
 			}
-			a:hover
+			a.outside:visited{color: purple;}
+			a.inside:link{
+				<% if !@page.defaultLinks %>
+					<%= "color:" %>
+					<%= @page.aLink %>
+				<% end %>
+			;}
+			a.inside:visited{ 
+				<% if !@page.defaultLinks %>
+					<%= "color:" %>
+					<%= @page.aVisited %>
+				<% end %>
+			;}
+			a.inside:hover{
+				<% if !@page.defaultLinks %>
+					<%= "color:" %>
+					<%= @page.aHover %>
+				<% end %>
+			;}
+			a.inside:active{
+				<% if !@page.defaultLinks %>
+					<%= "color:" %>
+					<%= @page.aActive %>
+				<% end %>
+			;}
+			.column 
 			{
-				color: <%= @page.aHover %>;
-			}
-			a:active
-			{
-				color: <%= @page.aActive %>;
-			}
-			.column {
 			  float: left;
-			  width: 50%;
+			  width: 45%;
+			  margin: 4px;
 			}
 		</style>
 	</head>
@@ -37,20 +101,40 @@
 		<div class="column">
 			<a href="http://localhost:3000">HOME</a><br>
 			<a href="http://localhost:3000/pages">PAGES & WORDS</a>
-			<h1><%= @page.title %></h1>
+			<div class="previewBackground">
+				<div class="preview">
+					<h1><%= @page.title %></h1>
 
-			<p>BACKGROUND COLOR: <%= @page.bgColor %></p>
+					<p>
+						<%= "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
+						eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
+						nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, 
+						sem. Nulla consequat massa quis enim." %>
+					</p>
 
-			<p>FONT COLOR: <%= @page.fontColor %></p>
-
-			<p>FONT STYLE: <%= @page.fontStyle %></p>
-
-			<%= link_to "EDIT", edit_page_path(@page) %><br>
-
-			<%= link_to "DELETE", page_path(@page), data: {
-						turbo_method: :delete,
-						turbo_confirm: "Are you sure?"
-					  } %>
+					<p>
+						<%= "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, 
+						rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+						Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend 
+						tellus." %>
+					</p>
+					<p>
+						<%= "Te duo graeci invenire, ea pri idque corpora deleniti, vim inermis repudiare ea. 
+						Ea tamquam constituto his, populo eirmod viderer eu his, autem tollit praesent ne nam. 
+						In semper option qui, mei noluisse eleifend eu. Dicant verear ea has. Ut quem ornatus 
+						conceptam pro, ex usu legimus maiestatis definitiones." %>
+					</p>
+					<a class="inside" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">This is a link!</a>
+				</div>
+			</div>
+			<ul>
+			  <li><%= link_to "EDIT", edit_page_path(@page) %></li>
+			  <li><%= link_to "DELETE", page_path(@page), data: {
+								turbo_method: :delete,
+								turbo_confirm: "Are you sure?"
+							  } %>
+			  </li>
+			</ul>
 		</div>
 		<div class="column">
 			<h4> My Words:</h4>

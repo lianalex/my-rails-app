@@ -1,12 +1,57 @@
 <%= form_with model: page do |form| %>
   <div>
-    <%= form.label :title %><br>
+    <b><%= form.label :title, "Title of CSS Document:" %><br></b>
     <%= form.text_field :title %>
     <% page.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
+  
+  <div>
+    <%= form.label :titleUnderline, "Underline?" %>
+	<%= form.check_box :titleUnderline %>
+  </div>
 
+  <div>
+    <%= form.label :titleItalicize, "Italicize?" %>
+	<%= form.check_box :titleItalicize %>
+  </div>
+  
+  <div>
+	<%= form.label :titlePosition, "Title Position:" %>
+	
+	<%= form.radio_button :titlePosition, "Left" %>
+	<%= form.label page.titlePosition, "Left"%>
+	
+	<%= form.radio_button :titlePosition, "Center" %>
+	<%= form.label page.titlePosition, "Center"%>
+	
+	<%= form.radio_button :titlePosition, "Right" %>
+	<%= form.label page.titlePosition, "Right"%>	
+  </div>
+  <br>
+  
+  <div><b>Background:</b></div>
+  <div>
+	<%= form.label :bgImageBool, "Background Image? " %>
+	<%= form.check_box :bgImageBool %>	
+  </div>
+  
+  <div>
+    <%= form.label :bgImage, "Background Image URL: " %><br>
+    <%= form.url_field :bgImage %>
+  </div>
+  
+  <div>
+	<%= form.label :bgImageTile, "Tile Background Image? " %>
+	<%= form.check_box :bgImageTile %>  
+  </div>
+  
+  <div>
+	<%= form.label :ngImageScroll, "Scroll Background Image? " %>
+	<%= form.check_box :bgImageScroll %>  
+  </div>
+  
   <div>
     <%= form.label :bgColor, "Background Color:" %>
 	<%= form.color_field :bgColor %><br>
@@ -14,7 +59,8 @@
       <div><%= message %></div>
     <% end %>
   </div>
-
+  <br>
+    <div><b>Font:</b></div>
   <div>
 	<%= form.label :fontColor, "Font Color:" %>
 	<%= form.color_field :fontColor %><br>
@@ -42,8 +88,42 @@
 	<% page.errors.full_messages_for(:fontStyle).each do |message| %>
       <div><%= message %></div>
     <% end %>
+  </div> 
+  
+  <div>
+	<%= form.label :textStyle, "Text Style:" %>
+	
+	<%= form.radio_button :textStyle, "None" %>
+	<%= form.label page.textStyle, "None"%>
+	
+	<%= form.radio_button :textStyle, "Uppercase" %>
+	<%= form.label page.textStyle, "Uppercase"%>
+	
+	<%= form.radio_button :textStyle, "Lowercase" %>
+	<%= form.label page.textStyle, "Lowercase"%>
+	
+	<%= form.radio_button :textStyle, "Capitalize" %>
+	<%= form.label page.textStyle, "Capitalize"%>	
+  </div>
+ 
+  <div>
+	<%= form.label :textShadow, "Text Shadow:" %>	
+	<%= form.range_field :textShadow, :min=>0, :max=>5 %><br>
   </div>
   
+  <div>
+	<%= form.label :shadowBlur, "Shadow Blur:" %>	
+	<%= form.range_field :shadowBlur, :min=>0, :max=>5 %><br>
+  </div>
+  
+  <div>
+    <%= form.label :shadowColor, "Shadow Color:" %>
+	<%= form.color_field :shadowColor %><br>
+  </div>  
+  
+  <br>
+  
+  <div><b>Border:</b></div>
   <div>
 	<%= form.label :borderStyle, "Border Style:" %>	
 	<%= form.select :borderStyle, [
@@ -61,13 +141,26 @@
   </div>
   
   <div>
-	<%= form.label :borderWidth, "Border Width:" %>	
-	<%= form.select :borderWidth, [
-		"thin",
-		"medium",
-		"thick"
-		]
-	%><br>
+	<%= form.label :borderwidth, "Border Width:" %>	
+	<%= form.range_field :borderWidth, :min=>0, :max=>50 %><br>
+  </div>
+  
+  <div>
+    <%= form.label :borderColor, "Border Color:" %>
+	<%= form.color_field :borderColor %><br>
+  </div>
+  
+  <div>
+	<%= form.label :borderRounded, "Rounded Border:" %>	
+	<%= form.range_field :borderRounded, :min=>0, :max=>100 %><br>
+  </div>  
+  <br>
+  
+  <div><b>Hyperlinks:</b></div>
+  
+  <div>
+	<%= form.label :defaultLinks, "Default Hyperlink Colors? " %>
+	<%= form.check_box :defaultLinks %>
   </div>
   
   <div>
@@ -89,7 +182,7 @@
     <%= form.label :aActive, "Active Link Color:" %>
 	<%= form.color_field :aActive %><br>
   </div>
-  
+  <br>
   <div>
     <%= form.submit %>
   </div>

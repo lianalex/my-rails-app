@@ -55,7 +55,20 @@ class PagesController < ApplicationController
 		:aLink,
 		:aVisited,
 		:aHover,
-		:aActive
+		:aActive,
+		:titleUnderline,
+		:titleItalicize,
+		:titlePosition,
+		:defaultLinks,
+		:bgImageBool,
+		:bgImage,
+		:bgImageTile,
+		:bgImageScroll,
+		:borderRounded,
+		:textStyle,
+		:textShadow,
+		:shadowBlur,
+		:shadowColor
 		)
     end
 end
