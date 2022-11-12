@@ -1,11 +1,9 @@
 <a href="http://localhost:3000">HOME</a><br>
 <a href="http://localhost:3000/pages">PAGES & WORDS</a>
+
 <h1><%= @word.title %></h1>
 
-
-<p><%= @word.image %></p>
-
-<%= image_tag(@word.image) %>
+<%= image_tag(@word.image) if @word.image? %>
 
 <p><%= @word.p1 %></p>
 
@@ -16,6 +14,7 @@
 <h3><%= @word.subtitle1 %></h3>
 
 <p><%= @word.p3 %></p>
+
 
 <ul>
   <li><%= link_to "EDIT", edit_word_path(@word) %></li>
