@@ -37,7 +37,7 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
     @word.destroy
 
-    redirect_to '/words', status: :see_other
+    redirect_to '/pages', status: :see_other
   end
   
     private

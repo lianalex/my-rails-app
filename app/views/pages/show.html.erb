@@ -21,6 +21,14 @@
 					<%= "text-align: right;" %>
 				<% end %>
 			}
+			html
+			{
+				height: 100%;
+			}
+			body
+			{
+				height: 100%;
+			}
 			.preview 
 			{
 				<% if @page.bgImageBool %>
@@ -62,6 +70,9 @@
 			}
 			.previewBackground
 			{
+			  	width: 640px;
+				height: auto;
+			  	margin: 4px;
 				background-color: <%= @page.bgColor %>;			
 			}
 			a.outside:visited{color: purple;}
@@ -89,44 +100,37 @@
 					<%= @page.aActive %>
 				<% end %>
 			;}
-			.column 
-			{
-			  float: left;
-			  width: 45%;
-			  margin: 4px;
-			}
 		</style>
 	</head>
 	<body>
-		<div class="column">
-			<a href="http://localhost:3000">HOME</a><br>
-			<a href="http://localhost:3000/pages">PAGES & WORDS</a>
-			<div class="previewBackground">
-				<div class="preview">
-					<h1><%= @page.title %></h1>
+		<a href="http://localhost:3000">HOME</a><br>
+		<a href="http://localhost:3000/pages">PAGES, WORDS & PRODUCTS</a>
+		<div class="previewBackground">
+			<div class="preview">
+				<h1><%= @page.title %></h1>
+				<a class="inside" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">This is a link!</a>
+				<p>
+					<%= "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
+					eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
+					nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, 
+					sem. Nulla consequat massa quis enim." %>
+				</p>
 
-					<p>
-						<%= "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
-						eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
-						nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, 
-						sem. Nulla consequat massa quis enim." %>
-					</p>
-
-					<p>
-						<%= "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, 
-						rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-						Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend 
-						tellus." %>
-					</p>
-					<p>
-						<%= "Te duo graeci invenire, ea pri idque corpora deleniti, vim inermis repudiare ea. 
-						Ea tamquam constituto his, populo eirmod viderer eu his, autem tollit praesent ne nam. 
-						In semper option qui, mei noluisse eleifend eu. Dicant verear ea has. Ut quem ornatus 
-						conceptam pro, ex usu legimus maiestatis definitiones." %>
-					</p>
-					<a class="inside" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">This is a link!</a>
-				</div>
+				<p>
+					<%= "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, 
+					rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+					Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend 
+					tellus." %>
+				</p>
+				<p>
+					<%= "Te duo graeci invenire, ea pri idque corpora deleniti, vim inermis repudiare ea. 
+					Ea tamquam constituto his, populo eirmod viderer eu his, autem tollit praesent ne nam. 
+					In semper option qui, mei noluisse eleifend eu. Dicant verear ea has. Ut quem ornatus 
+					conceptam pro, ex usu legimus maiestatis definitiones." %>
+				</p>
 			</div>
+		</div>
+		<div class="footer">
 			<ul>
 			  <li><%= link_to "EDIT", edit_page_path(@page) %></li>
 			  <li><%= link_to "DELETE", page_path(@page), data: {
@@ -135,21 +139,6 @@
 							  } %>
 			  </li>
 			</ul>
-		</div>
-		<div class="column">
-			<h4> My Words:</h4>
-			<%= form_with model: @word do |form| %>
-				<ul>
-				  <% @words.each do |word| %>
-					<%= form.radio_button :wordChoices, @word %>
-					<%= form.label word.title, @word%>
-					<br>
-				  <% end %>
-				</ul>
-				<div>
-					<%= form.submit "Produce"%>
-				</div>
-			<% end %>
 		</div>
 	<body>
 </html>

@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   def index
 	@pages = Page.all
 	@words = Word.all
+	@products = Product.all
   end
   def show
     @page = Page.find(params[:id])

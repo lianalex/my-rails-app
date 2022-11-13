@@ -1,6 +1,11 @@
 <a href="http://localhost:3000">HOME</a><br>
-<a href="http://localhost:3000/pages">PAGES & WORDS</a>
-
+<a href="http://localhost:3000/pages">PAGES, WORDS & PRODUCTS</a>
+<style>
+	img
+	{
+		float: right;
+	}
+</style>
 <h1><%= @word.title %></h1>
 
 <%= image_tag(@word.image) if @word.image? %>

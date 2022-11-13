@@ -1,9 +1,16 @@
-<a href="http://localhost:3000">HOME</a>
+<a href="http://localhost:3000">HOME</a><br>
 
-<h1>Pages & Words</h1>
+<h1>Pages, Words & Products</h1>
 
-<a href="http://localhost:3000/pages/new">NEW PAGE</a><br>
-<a href="http://localhost:3000/words">NEW WORD</a><br>
+<h4> My Words:</h4>
+<ul>
+  <% @words.each do |word| %>
+    <li>
+		<%= link_to word.title, word %>
+    </li>
+  <% end %>
+</ul>
+<a href="http://localhost:3000/words/new">NEW WORD</a><br>
 
 <h4> My Pages:</h4>
 <ul>
@@ -13,11 +20,14 @@
     </li>
   <% end %>
 </ul>
-<h4> My Words:</h4>
+<a href="http://localhost:3000/pages/new">NEW PAGE</a><br>
+
+<h4> My Products:</h4>
 <ul>
-  <% @words.each do |word| %>
+  <% @products.each do |p| %>
     <li>
-		<%= link_to word.title, word %>
+      <%= link_to p.title, p %>
     </li>
   <% end %>
 </ul>
+<a href="http://localhost:3000/products/new">NEW PRODUCT</a>

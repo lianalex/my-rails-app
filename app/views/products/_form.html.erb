@@ -1,0 +1,41 @@
+<%= form_with model: @product do |form| %>
+
+  <div>
+	<b><%= form.label :title, "Name your Product:" %><br></b>
+	<%= form.text_field :title %>
+      <% product.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+  </div>
+  <br>
+  
+  <div><b><%= form.label :htmlID, "Choose a word:" %><br></b></div>
+  <div>
+	<% @words.each do |word| %>
+		<%= form.radio_button :htmlID, word.id %>
+		<%= link_to word.title, word %>
+		<br>
+	<% end %>
+    <% @product.errors.full_messages_for(:htmlID).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+
+  <div><b><%= form.label :cssID, "Choose a page:" %><br></b></div>
+  <div>
+	<% @pages.each do |page| %>
+		<%= form.radio_button :cssID, page.id %>
+		<%= link_to page.title, page %>	
+		<br>
+	<% end %>
+    <% @product.errors.full_messages_for(:cssID).each do |message| %>
+      <div><%= message %></div>
+    <% end %>	
+  </div>
+  <br>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

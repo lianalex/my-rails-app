@@ -1,0 +1,120 @@
+<% @wordModel = Word.find(@product.htmlID) %>
+<% @pageModel = Page.find(@product.cssID) %>
+<!DOCTYPE html>
+<html>
+	<a href="http://localhost:3000">HOME</a><br>
+	<a href="http://localhost:3000/pages">PAGES, WORDS & PRODUCTS</a><br>
+	<head>
+		<style>
+			h1, h2, h3, h4, h5, h6, h7
+			{
+				text-align: center;
+				<% if @pageModel.titleUnderline %>
+					<%= "text-decoration: underline;" %>
+				<% end %>
+				<% if @pageModel.titleItalicize %>
+					<%= "font-style: italic;" %>
+				<% end %>
+				<% if @pageModel.titlePosition == "Left" %>
+					<%= "text-align: left;" %>
+				<% end %>
+				<% if @pageModel.titlePosition == "Center" %>
+					<%= "text-align: center;" %>
+				<% end %>
+				<% if @pageModel.titlePosition == "Right" %>
+					<%= "text-align: right;" %>
+				<% end %>
+			}
+			img
+			{
+				float: right;
+			}
+			body
+			{
+				background-color: <%= @pageModel.bgColor %>;	
+				<% if @pageModel.bgImageBool %>
+					<%= "background-image: url(" %>
+					<%= @pageModel.bgImage %>
+					<%= ");" %>
+					
+					<% if !@pageModel.bgImageTile %>
+						<%= "background-repeat: no-repeat;" %>
+						<%= "background-size: cover;" %>
+					<% end %>
+					<% if @pageModel.bgImageScroll %>
+						<%= "background-attachment: scroll;" %>
+					<% end %>
+				<% end %>
+				
+				color: <%= @pageModel.fontColor %>;
+				font-family: <%= @pageModel.fontStyle %>;
+				text-shadow: <%= @pageModel.textShadow %>px 
+					<%= @pageModel.textShadow %>px 
+					<%= @pageModel.shadowBlur %>px 
+					<%= @pageModel.shadowColor %>;
+				border-style: <%= @pageModel.borderStyle %>;
+				border-width: <%= @pageModel.borderWidth %>px;
+				border-color: <%= @pageModel.borderColor %>;
+				border-radius: <%= @pageModel.borderRounded %>%;
+			}
+			p
+			{
+			<% if @pageModel.textStyle == "Lowercase" %>
+				<%= "text-transform: lowercase;" %>
+			<% end %>
+			<% if @pageModel.textStyle == "Uppercase" %>
+				<%= "text-transform: uppercase;" %>
+			<% end %>
+			<% if @pageModel.textStyle == "Capitalize" %>
+				<%= "text-transform: capitalize;" %>
+			<% end %>			
+			}
+
+			a.outside:visited{color: purple;}
+			a:link{
+				<% if !@pageModel.defaultLinks %>
+					<%= "color:" %>
+					<%= @pageModel.aLink %>
+				<% end %>
+			;}
+			a:visited{ 
+				<% if !@pageModel.defaultLinks %>
+					<%= "color:" %>
+					<%= @pageModel.aVisited %>
+				<% end %>
+			;}
+			a:hover{
+				<% if !@pageModel.defaultLinks %>
+					<%= "color:" %>
+					<%= @pageModel.aHover %>
+				<% end %>
+			;}
+			a:active{
+				<% if !@pageModel.defaultLinks %>
+					<%= "color:" %>
+					<%= @pageModel.aActive %>
+				<% end %>
+			;}
+		</style>
+	</head>
+	<body>
+		<!-- <div class="previewBackground"> -->
+			<!-- <div class="preview"> -->
+				<h1><%= @wordModel.title %></h1>
+				<%= image_tag(@wordModel.image) if @wordModel.image? %>
+				<p><%= @wordModel.p1 %></p>
+				<h4><%= @wordModel.subtitle1 %></h4>
+				<p><%= @wordModel.p2 %></p>
+				<h4><%= @wordModel.subtitle2 %></h4>
+				<p><%= @wordModel.p3 %></p>
+			<!-- </div> -->
+		<!-- </div> -->
+	</body>
+	<ul>
+	  <li><%= link_to "EDIT", edit_product_path(@product) %></li>
+	  <li><%= link_to "DELETE", product_path(@product), data: {
+						turbo_method: :delete,
+						turbo_confirm: "Are you sure?"
+					  } %></li>
+	</ul>
+</html>

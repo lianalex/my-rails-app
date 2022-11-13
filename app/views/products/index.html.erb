@@ -1,0 +1,12 @@
+<a href="http://localhost:3000">HOME</a><br>
+<a href="http://localhost:3000/pages">PAGES, WORDS & PRODUCTS</a><br>
+v
+<h1>Hello Products!</h1>
+<ul>
+  <% @products.each do |p| %>
+    <li>
+      <%= link_to p.id, p %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "NEW PRODUCT", new_product_path %>
