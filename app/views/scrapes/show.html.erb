@@ -1,0 +1,18 @@
+<a href="http://localhost:3000">HOME</a><br>
+<a href="http://localhost:3000/scrapes">SCRAPES</a>
+<h1><%= @scrape.title %></h1>
+
+<% @target = HTTParty.get(@scrape.targetURL) %>
+<p><%= @target %></p>
+<p><%= @scrape.price %></p>
+
+<p><%= @scrape.availability %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_scrape_path(@scrape) %></li>
+    <li><%= link_to "Destroy", scrape_path(@scrape), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+				  
+</ul>
