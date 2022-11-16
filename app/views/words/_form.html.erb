@@ -16,46 +16,6 @@
   </div>
   
   <div>
-    <%= form.label :p1 %><br>
-    <%= form.text_area :p1 %>
-	<% @word.errors.full_messages_for(:p1).each do |message| %>
-    <div><%= message %></div>
-    <% end %>
-  </div>
-    
-  <div>
-      <%= form.label :subtitle1 %><span> (optional)</span><br>
-      <%= form.text_field :subtitle1 %>
-    <% @word.errors.full_messages_for(:subtitle1).each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-  </div>
-  
-  <div>
-    <%= form.label :p2 %><br>
-    <%= form.text_area :p2 %>
-	<% @word.errors.full_messages_for(:p2).each do |message| %>
-    <div><%= message %></div>
-    <% end %>
-  </div>
-    
-  <div>
-    <%= form.label :subtitle2 %><span> (optional)</span><br>
-      <%= form.text_field :subtitle2 %>
-    <% @word.errors.full_messages_for(:subtitle2).each do |message| %>
-      <div><%= message %></div>
-      <% end %>
-  </div>
-  
-  <div>
-    <%= form.label :p3 %><br>
-    <%= form.text_area :p3 %>
-	<% @word.errors.full_messages_for(:p2).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  
-  <div>
     <%= form.submit %>
   </div>
 <% end %>

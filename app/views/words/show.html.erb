@@ -7,19 +7,6 @@
 </style>
 <h1><%= @word.title %></h1>
 
-<%= image_tag(@word.image) if @word.image? %>
-
-<p><%= @word.p1 %></p>
-
-<h3><%= @word.subtitle1 %></h3>
-
-<p><%= @word.p2 %></p>
-
-<h3><%= @word.subtitle2 %></h3>
-
-<p><%= @word.p3 %></p>
-
-
 <ul>
   <li><%= link_to "EDIT", edit_word_path(@word) %></li>
     <li><%= link_to "DELETE", word_path(@word), data: {
@@ -27,3 +14,26 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
+
+<%= image_tag(@word.image) if @word.image? %>
+
+<h2>Sections:</h2>
+<% @word.sections.each do |s| %>
+  <p>
+	<strong>Title:</strong>
+	<%= s.title %>
+	<strong>Tag:</strong>
+	<%= s.tag %>
+      <%= link_to "DELETE", [s.word, s], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+  </p>
+  <p>
+	<strong>Body:</strong>
+	<%= s.body %>
+  </p>
+  
+<% end %>
+<h2>Add a section:</h2>
+<%= render 'sections/form' %>

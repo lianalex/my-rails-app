@@ -42,6 +42,6 @@ class WordsController < ApplicationController
   
     private
     def word_params
-      params.require(:word).permit(:image, :title, :p1, :subtitle1, :p2, :subtitle2, :p3)
+      params.require(:word).permit(:image, :title)
     end
 end

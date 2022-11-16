@@ -97,17 +97,8 @@
 		</style>
 	</head>
 	<body>
-		<!-- <div class="previewBackground"> -->
-			<!-- <div class="preview"> -->
-				<h1><%= @wordModel.title %></h1>
-				<%= image_tag(@wordModel.image) if @wordModel.image? %>
-				<p><%= @wordModel.p1 %></p>
-				<h4><%= @wordModel.subtitle1 %></h4>
-				<p><%= @wordModel.p2 %></p>
-				<h4><%= @wordModel.subtitle2 %></h4>
-				<p><%= @wordModel.p3 %></p>
-			<!-- </div> -->
-		<!-- </div> -->
+		<%= image_tag(@wordModel.image) if @wordModel.image? %>
+		<p><%= render @wordModel.sections %></p>
 	</body>
 	<ul>
 	  <li><%= link_to "EDIT", edit_product_path(@product) %></li>
