@@ -1,6 +1,4 @@
-<a href="http://localhost:3000">HOME</a><br>
-<a href="http://localhost:3000/pages">PAGES, WORDS & PRODUCTS</a><br>
-v
+<%= render "menuBar", link: @Link %>
 <h1>Hello Products!</h1>
 <ul>
   <% @products.each do |p| %>

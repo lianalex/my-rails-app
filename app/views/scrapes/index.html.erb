@@ -1,5 +1,4 @@
-<a href="http://localhost:3000">HOME</a><br>
-<a href="http://localhost:3000/scrapes">SCRAPES</a>
+<%= render "menuBar", link: @Link %>
 <h1>Welcome to the Scraper</h1>
 <h3>My Scrapes:</h3>
 <ul>
@@ -10,5 +9,5 @@
   <% end %>
 </ul>
 
-<%= link_to "New Scrape", new_scrape_path %>
+<%= link_to "NEW SCRAPE", new_scrape_path %>
 

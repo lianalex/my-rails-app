@@ -103,8 +103,7 @@
 		</style>
 	</head>
 	<body>
-		<a href="http://localhost:3000">HOME</a><br>
-		<a href="http://localhost:3000/pages">PAGES, WORDS & PRODUCTS</a>
+		<%= render "menuBar", page: @Page %>
 		<div class="previewBackground">
 			<div class="preview">
 				<h1><%= @page.title %></h1>

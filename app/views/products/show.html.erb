@@ -2,8 +2,7 @@
 <% @pageModel = Page.find(@product.cssID) %>
 <!DOCTYPE html>
 <html>
-	<a href="http://localhost:3000">HOME</a><br>
-	<a href="http://localhost:3000/pages">PAGES, WORDS & PRODUCTS</a><br>
+	<%= render "menuBar", link: @Link %>
 	<head>
 		<style>
 			h1, h2, h3, h4, h5, h6, h7

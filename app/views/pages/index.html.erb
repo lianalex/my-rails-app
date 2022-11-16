@@ -1,8 +1,7 @@
-<a href="http://localhost:3000">HOME</a><br>
-
-<h1>Pages, Words & Products</h1>
-
-<h4> My Words:</h4>
+<%= render "menuBar", page: @Page %>
+<h1>The Generator</h1>
+<p>Hover over "My Words", "My Pages" or "My Product" for more info!</p>
+<h4 title="This is a list of the stylesheets you have created."> My Words:</h4>
 <ul>
   <% @words.each do |word| %>
     <li>
@@ -12,7 +11,7 @@
 </ul>
 <a href="http://localhost:3000/words/new">NEW WORD</a><br>
 
-<h4> My Pages:</h4>
+<h4 title="This is a list of the HTML content you have created."> My Pages:</h4>
 <ul>
   <% @pages.each do |p| %>
     <li>
@@ -22,7 +21,7 @@
 </ul>
 <a href="http://localhost:3000/pages/new">NEW PAGE</a><br>
 
-<h4> My Products:</h4>
+<h4 title="This is the final product where you combine your HTML with your stylesheet."> My Products:</h4>
 <ul>
   <% @products.each do |p| %>
     <li>
