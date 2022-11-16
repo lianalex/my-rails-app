@@ -19,7 +19,7 @@ class CreatePages < ActiveRecord::Migration[7.0]
 	  t.boolean :bgImageBool
 	  t.string :bgImage
 	  t.boolean :bgImageTile
-	  t.boolean :bgImageScroll
+	  #t.boolean :bgImageScroll
 	  t.integer :borderRounded
 	  t.boolean :newspaper
 	  t.string :textStyle

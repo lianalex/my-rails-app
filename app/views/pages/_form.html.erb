@@ -39,7 +39,8 @@
   
   <div>
     <%= form.label :bgImage, "Background Image URL: " %><br>
-    <%= form.url_field :bgImage %>
+    <%= form.url_field :bgImage %><br>
+	<i><%= "*Make sure to \"copy image address\" of the image you would like to use." %></i>
   </div>
   
   <div>
@@ -47,10 +48,10 @@
 	<%= form.check_box :bgImageTile %>  
   </div>
   
-  <div>
+  <!-- <div>
 	<%= form.label :ngImageScroll, "Scroll Background Image? " %>
-	<%= form.check_box :bgImageScroll %>  
-  </div>
+	<%= form.check_box :bgImageScroll %>
+  </div> -->
   
   <div>
     <%= form.label :bgColor, "Background Color:" %>

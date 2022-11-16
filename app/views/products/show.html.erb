@@ -5,7 +5,7 @@
 	<%= render "links/menuBar" %>
 	<head>
 		<style>
-			h1, h2, h3, h4, h5, h6, h7
+			h1, h2, h3, h4, h5, h6
 			{
 				text-align: center;
 				<% if @pageModel.titleUnderline %>
@@ -31,6 +31,9 @@
 			body
 			{
 				background-color: <%= @pageModel.bgColor %>;	
+			}
+			.content
+			{
 				<% if @pageModel.bgImageBool %>
 					<%= "background-image: url(" %>
 					<%= @pageModel.bgImage %>
@@ -40,9 +43,9 @@
 						<%= "background-repeat: no-repeat;" %>
 						<%= "background-size: cover;" %>
 					<% end %>
-					<% if @pageModel.bgImageScroll %>
-						<%= "background-attachment: scroll;" %>
-					<% end %>
+					<%# if @pageModel.bgImageScroll %>
+						<%# "background-attachment: scroll;" %>
+					<%# end %>
 				<% end %>
 				
 				color: <%= @pageModel.fontColor %>;
@@ -54,7 +57,7 @@
 				border-style: <%= @pageModel.borderStyle %>;
 				border-width: <%= @pageModel.borderWidth %>px;
 				border-color: <%= @pageModel.borderColor %>;
-				border-radius: <%= @pageModel.borderRounded %>%;
+				border-radius: <%= @pageModel.borderRounded %>%;			
 			}
 			p
 			{
@@ -70,6 +73,7 @@
 			}
 
 			a.outside:visited{color: purple;}
+			
 			a:link{
 				<% if !@pageModel.defaultLinks %>
 					<%= "color:" %>
@@ -97,8 +101,10 @@
 		</style>
 	</head>
 	<body>
-		<%= image_tag(@wordModel.image) if @wordModel.image? %>
-		<p><%= render @wordModel.sections %></p>
+		<div class="content">
+			<%= image_tag(@wordModel.image) if @wordModel.image? %>
+			<%= render @wordModel.sections %>
+		</content>
 	</body>
 	<ul>
 	  <li><%= link_to "EDIT", edit_product_path(@product) %></li>

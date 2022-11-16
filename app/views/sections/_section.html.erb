@@ -1,3 +1,8 @@
-<<%= section.tag %>>
+<<%= section.tag %>
+	<% if section.isLink %>
+		<%= "href=" %>
+		<%= section.hyperlink %>
+	<% end %>
+>
 <%= section.body %>
 </<%= section.tag %>>

@@ -14,6 +14,6 @@ class SectionsController < ApplicationController
   
   private
     def section_params
-      params.require(:section).permit(:title, :tag, :body)
+      params.require(:section).permit(:tag, :body, :isLink, :hyperlink)
     end
 end

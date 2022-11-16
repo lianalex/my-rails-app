@@ -58,7 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_011524) do
     t.boolean "bgImageBool"
     t.string "bgImage"
     t.boolean "bgImageTile"
-    t.boolean "bgImageScroll"
     t.integer "borderRounded"
     t.string "textStyle"
     t.integer "textShadow"
@@ -86,9 +85,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_011524) do
   end
 
   create_table "sections", force: :cascade do |t|
-    t.string "title"
     t.string "tag"
     t.text "body"
+    t.boolean "isLink"
+    t.string "hyperlink"
     t.integer "word_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

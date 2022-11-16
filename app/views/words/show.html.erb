@@ -24,18 +24,20 @@
 <h2>Sections:</h2>
 <% @word.sections.each do |s| %>
   <p>
-	<strong>Title:</strong>
-	<%= s.title %>
+	<!-- <strong>Title:</strong> -->
+	<%# s.title %>
 	<strong>Tag:</strong>
 	<%= s.tag %>
-      <%= link_to "DELETE", [s.word, s], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %>
   </p>
   <p>
 	<strong>Body:</strong>
 	<%= s.body %>
+  </p>
+  <p>
+	  <%= link_to "DELETE", [s.word, s], data: {
+			  turbo_method: :delete,
+			  turbo_confirm: "Are you sure?"
+			} %>
   </p>
   
 <% end %>

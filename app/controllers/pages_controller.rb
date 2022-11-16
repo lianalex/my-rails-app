@@ -64,7 +64,7 @@ class PagesController < ApplicationController
 		:bgImageBool,
 		:bgImage,
 		:bgImageTile,
-		:bgImageScroll,
+		#:bgImageScroll,
 		:borderRounded,
 		:textStyle,
 		:textShadow,
