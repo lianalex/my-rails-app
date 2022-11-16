@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :products
   resources :pages
-  resources :words
+  resources :words do
+    resources :sections
+  end
   resources :scrapes
 end

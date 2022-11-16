@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_14_003126) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_16_011524) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -92,18 +92,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_003126) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sections", force: :cascade do |t|
+    t.string "title"
+    t.string "tag"
+    t.text "body"
+    t.integer "word_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["word_id"], name: "index_sections_on_word_id"
+  end
+
   create_table "words", force: :cascade do |t|
     t.string "image"
     t.string "title"
-    t.text "p1"
-    t.string "subtitle1"
-    t.text "p2"
-    t.string "subtitle2"
-    t.text "p3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "sections", "words"
 end
