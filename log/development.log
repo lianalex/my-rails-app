@@ -7769,3 +7769,161 @@ FOREIGN KEY ("blob_id")
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (8.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments"[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs"[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (13.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records"[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (6.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles"[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "pages"[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "pages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "bgColor" varchar, "fontColor" varchar, "fontStyle" varchar, "borderStyle" varchar, "borderWidth" integer, "borderColor" varchar, "aLink" varchar, "aVisited" varchar, "aHover" varchar, "aActive" varchar, "titleUnderline" boolean, "titleItalicize" boolean, "defaultLinks" boolean, "titlePosition" varchar, "bgImageBool" boolean, "bgImage" varchar, "bgImageTile" boolean, "bgImageScroll" boolean, "borderRounded" integer, "textStyle" varchar, "textShadow" integer, "shadowBlur" integer, "shadowColor" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "htmlID" integer, "cssID" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "scrapes"[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "targetURL" varchar, "title" varchar, "price" varchar, "availability" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (21.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "words"[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "words" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "title" varchar, "p1" text, "subtitle1" varchar, "p2" text, "subtitle2" varchar, "p3" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "active_storage_attachments"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "active_storage_attachments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "aactive_storage_attachments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_variant_records" ("id" integer NOT NULL PRIMARY KEY, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_variant_records_uniqueness" ON "aactive_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "active_storage_variant_records"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer NOT NULL PRIMARY KEY, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "aactive_storage_variant_records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aactive_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "3a16c1971c04825f570c8b0f6b1eee9e7dae2b8f"], ["updated_at", "2022-11-16 01:50:52.290397"], ["key", "schema_sha1"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (7.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments"[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs"[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (7.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records"[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (6.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles"[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "pages"[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "pages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "bgColor" varchar, "fontColor" varchar, "fontStyle" varchar, "borderStyle" varchar, "borderWidth" integer, "borderColor" varchar, "aLink" varchar, "aVisited" varchar, "aHover" varchar, "aActive" varchar, "titleUnderline" boolean, "titleItalicize" boolean, "defaultLinks" boolean, "titlePosition" varchar, "bgImageBool" boolean, "bgImage" varchar, "bgImageTile" boolean, "bgImageScroll" boolean, "borderRounded" integer, "textStyle" varchar, "textShadow" integer, "shadowBlur" integer, "shadowColor" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "htmlID" integer, "cssID" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "scrapes"[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "scrapes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "targetURL" varchar, "title" varchar, "price" varchar, "availability" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (18.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "words"[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "words" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "title" varchar, "p1" text, "subtitle1" varchar, "p2" text, "subtitle2" varchar, "p3" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "active_storage_attachments"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "active_storage_attachments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "aactive_storage_attachments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_variant_records" ("id" integer NOT NULL PRIMARY KEY, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_variant_records_uniqueness" ON "aactive_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "active_storage_variant_records"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer NOT NULL PRIMARY KEY, "blob_id" integer NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "aactive_storage_variant_records"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aactive_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "development"], ["updated_at", "2022-11-16 01:50:52.517294"], ["key", "environment"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-11-16 01:50:52.528479"], ["key", "environment"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "3a16c1971c04825f570c8b0f6b1eee9e7dae2b8f"], ["updated_at", "2022-11-16 01:50:52.539688"], ["key", "schema_sha1"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
