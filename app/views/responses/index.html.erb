@@ -1,0 +1,12 @@
+<%= render "links/menuBar" %>
+<h1>Welcome to the Survey!</h1>
+<h3>Responses:</h3>
+<p><i>*Administrator credentials required to view responses</i></p>
+<ul>
+  <% @responses.each do |response| %>
+    <li>
+      <%= link_to response.id, response %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "TAKE SURVEY", new_response_path %>

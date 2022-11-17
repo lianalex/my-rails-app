@@ -1,0 +1,35 @@
+<%= render "links/menuBar" %>
+<h1>Response #<%= @response.id %></h1>
+
+<p>Q1: On a scale of 1 to 5, how advanced are your programming skills? 1: needing serious improvement 5: I am Pointdexter
+<br>
+<%= @response.q1 %></p>
+<p>Q2: On a scale of 1 to 5, do you believe this service has value? 1: by no means 5: absolutly
+<br>
+<%= @response.q2 %></p>
+<p>Q3: On a scale of 1 to 5, was the program easy to use? 1: difficult, 5: simple.
+<br>
+<%= @response.q3 %></p>
+<p>Q4: Considering your complete experience with the program, how likely would you be to recommend it to a friend or colleague? On a scale of 1 to 5
+<br>
+<%= @response.q4 %></p>
+<p>Q5:Please state three things that you felt were unnecessary in the program?
+<br>
+<%= @response.q5 %></p>
+<p>Q6: Please state three things that benefitted you the most from the program? 
+<br>
+<%= @response.q6 %></p>
+<p>Q7: Do you have any suggestions/comments that will help us make the program better?
+<br>
+<%= @response.q7 %></p>
+<p>Q8:Please briefly summarize how you go about designing a website from scratch.
+<br>
+<%= @response.q8 %></p>
+
+<ul>
+  <li><%= link_to "EDIT", edit_response_path(@response) %></li>
+  <li><%= link_to "DELETE", response_path(@response), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>

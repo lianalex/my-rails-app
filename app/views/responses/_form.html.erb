@@ -1,0 +1,85 @@
+<%= form_with model: @response do |form| %>
+  <div>
+    <%= form.label :q1 %>:
+	On a scale of 1 to 5, how advanced are your programming skills? 1: needing serious improvement 5: I am Pointdexter
+	<br>
+	<%= form.range_field :q1, :min=>1, :max=>5 %><br>
+	<% @response.errors.full_messages_for(:q1).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :q2 %>:
+	On a scale of 1 to 5, do you believe this service has value? 1: by no means 5: absolutly
+	<br>
+	<%= form.range_field :q2, :min=>1, :max=>5 %><br>
+	<% @response.errors.full_messages_for(:q2).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :q3 %>:
+	On a scale of 1 to 5, was the program easy to use? 1: difficult, 5: simple.
+	<br>
+	<%= form.range_field :q3, :min=>1, :max=>5 %><br>
+	<% @response.errors.full_messages_for(:q3).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :q4 %>:
+	Considering your complete experience with the program, how likely would you be to recommend it to a friend or colleague? On a scale of 1 to 5
+	<br>
+	<%= form.range_field :q4, :min=>1, :max=>5 %><br>
+	<% @response.errors.full_messages_for(:q4).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :q5 %>:
+	Please state three things that you felt were unnecessary in the program?
+	<br>
+    <%= form.text_area :q5 %>
+	<% @response.errors.full_messages_for(:q5).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :q6 %>:
+	Please state three things that benefitted you the most from the program?
+	<br>
+    <%= form.text_area :q6 %>
+	<% @response.errors.full_messages_for(:q6).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :q7 %>:
+	Do you have any suggestions/comments that will help us make the program better?
+	<br>
+    <%= form.text_area :q7 %>
+	<% @response.errors.full_messages_for(:q7).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :q8 %>:
+	Please briefly summarize how you go about designing a website from scratch.
+	<br>
+    <%= form.text_area :q8 %>
+	<% @response.errors.full_messages_for(:q8).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
