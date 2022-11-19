@@ -74,4 +74,5 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'kimurai'
+gem 'httparty'
+gem 'nokogiri'

@@ -2,10 +2,10 @@
 
 <h1><%= @scrape.title %></h1>
 
-<p><%= @scrape.targetURL %></p>
-
 <% @response = HTTParty.get(@scrape.targetURL) %>
-<p><%= @response %></p>
+<!--<p><%= @target %></p>-->
+
+<p><%= @scrape.targetURL %></p>
 
 <p><%= @scrape.price %></p>
 
