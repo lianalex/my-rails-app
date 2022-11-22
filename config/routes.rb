@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/products", to: "products#index"
   get "/scrapes", to: "scrapes#index"
   get "/responses", to: "responses#index"
+  get "products/:id/export", to: "products#export"
   
   resources :products
   

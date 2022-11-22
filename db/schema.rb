@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_160817) do
     t.boolean "titleUnderline"
     t.boolean "titleItalicize"
     t.string "titlePosition"
-    t.boolean "deafultLinks"
+    t.boolean "defaultLinks"
     t.boolean "bgImageBool"
     t.string "bgImage"
     t.boolean "bgImageTile"

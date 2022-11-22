@@ -15,7 +15,7 @@ class CreatePages < ActiveRecord::Migration[7.0]
 	  t.boolean :titleUnderline
 	  t.boolean :titleItalicize
 	  t.string :titlePosition
-	  t.boolean :deafultLinks
+	  t.boolean :defaultLinks
 	  t.boolean :bgImageBool
 	  t.string :bgImage
 	  t.boolean :bgImageTile
