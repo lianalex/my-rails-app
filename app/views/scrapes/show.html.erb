@@ -4,31 +4,6 @@
 
 <p><%= @scrape.targetURL %></p>
 
-<%#
-	5.times do |i|
-		page_url = @scrape.targetURL + "catalogue/page-#{i + 1}.html"  
-		# send an HTTP GET request
-		response = HTTParty.get(page_url)
-		# parse HTML with Nokogiri
-		document = Nokogiri::HTML4(response.body)
-		# each book is contained in the HTML element article with its class set to product_pod
-		books_containers = document.css('article.product_pod')
-		books_containers.each do |container|
-			title = container.css('h3 a').first['title']
-			price = container.css('.price_color').text.delete('^0-9.')
-			availability = container.css('.availability').text.strip
-			book = [title, price, availability]
-			#csv << book
-			books << book 
-		end    
-	end  
-%>
-<%# "#{books}\n" %>
-
-<p><%# @scrape.price %></p>
-
-<p><%# @scrape.availability %></p>
-
 <ul>
   <li><%= link_to "Edit", edit_scrape_path(@scrape) %></li>
   <li><%= link_to "Destroy", scrape_path(@scrape), data: {

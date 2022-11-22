@@ -51,6 +51,17 @@ class ProductsController < ApplicationController
     redirect_to '/pages', status: :see_other
   end
   
+  def export
+    @product = Product.find(params[:id])
+	page_url = "http://localhost:3000/products/" + params[:id].to_s
+	response = HTTParty.get(page_url)
+	puts "\n\nExporting...\n\n"
+	File.open("Exports/StaticWebpages/" + @product.title + ".html", "w") {
+		|file| file.write(response)
+	}
+  end
+  
+  
   private
 	def product_params
 		params.require(:product).permit(:title, :htmlID, :cssID)

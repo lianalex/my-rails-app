@@ -104,7 +104,7 @@
 		<div class="content">
 			<%= image_tag(@wordModel.image) if @wordModel.image? %>
 			<%= render @wordModel.sections %>
-		</content>
+		</div>
 	</body>
 	<ul>
 	  <li><%= link_to "EDIT", edit_product_path(@product) %></li>
@@ -112,5 +112,11 @@
 						turbo_method: :delete,
 						turbo_confirm: "Are you sure?"
 					  } %></li>
+	<li><%= link_to "EXPORT", "/products/" + @product.id.to_s + "/export" %></li>
 	</ul>
 </html>
+<%#
+	File.open("Exports/StaticWebpages/" + @product.title + ".html", "w") {
+		|file| file.write("your text")
+	}
+%>

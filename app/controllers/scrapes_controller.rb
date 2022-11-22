@@ -28,10 +28,6 @@ class ScrapesController < ApplicationController
 			bookPrice = container.css('.price_color').text.delete('^0-9.')
 			bookAvailability = container.css('.availability').text.strip
 			
-			puts bookTitle
-			puts bookPrice
-			puts bookAvailability
-			
 			@book = @scrape.books.new(title: bookTitle, price: bookPrice, availability: bookAvailability)
 			
 		end    
