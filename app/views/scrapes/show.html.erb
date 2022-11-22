@@ -4,8 +4,8 @@
 
 <p><%= @scrape.targetURL %></p>
 
-<%
-	50.times do |i|
+<%#
+	5.times do |i|
 		page_url = @scrape.targetURL + "catalogue/page-#{i + 1}.html"  
 		# send an HTTP GET request
 		response = HTTParty.get(page_url)
@@ -23,11 +23,11 @@
 		end    
 	end  
 %>
-<%= "#{books}\n" %>
+<%# "#{books}\n" %>
 
-<p><%= @scrape.price %></p>
+<p><%# @scrape.price %></p>
 
-<p><%= @scrape.availability %></p>
+<p><%# @scrape.availability %></p>
 
 <ul>
   <li><%= link_to "Edit", edit_scrape_path(@scrape) %></li>
@@ -37,3 +37,41 @@
                   } %></li>
 				  
 </ul>
+
+<h2>Books</h2>
+<table>
+	<tr>
+		<th style="text-align: left"><strong>Title:</strong></th>
+		<th><strong>Price:</strong></th>
+		<th><strong>Availability:</strong></th>
+	</tr>
+<% @scrape.books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+	
+    <td><%= book.price %></td>
+	
+    <td><%= book.availability %></td>
+  </tr>
+  
+<% end %>
+</table>
+
+<h2>Add a Book:</h2>
+<%= form_with model: [ @scrape, @scrape.books.build ] do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+  </p>
+  <p>
+    <%= form.label :availability %><br>
+    <%= form.text_area :availability %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
