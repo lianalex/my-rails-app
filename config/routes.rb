@@ -7,10 +7,17 @@ Rails.application.routes.draw do
   get "/responses", to: "responses#index"
   
   resources :products
+  
   resources :pages
+  
   resources :words do
     resources :sections
   end
-  resources :scrapes
+  
+  resources :scrapes do
+    resources :books
+  end
+  
   resources :responses
+  
 end
