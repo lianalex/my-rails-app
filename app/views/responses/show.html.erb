@@ -27,6 +27,7 @@
 <%= @response.q8 %></p>
 
 <ul>
+  <li><%= link_to "EXPORT", "/responses/" + @response.id.to_s + "/export" %></li>
   <li><%= link_to "EDIT", edit_response_path(@response) %></li>
   <li><%= link_to "DELETE", response_path(@response), data: {
                     turbo_method: :delete,

@@ -5,6 +5,8 @@
 <p><%= @scrape.targetURL %></p>
 
 <ul>
+  <li><%= link_to "Export", "/scrapes/" + @scrape.id.to_s + "/export" %></li>
+ 
   <li><%= link_to "Edit", edit_scrape_path(@scrape) %></li>
   <li><%= link_to "Destroy", scrape_path(@scrape), data: {
                     turbo_method: :delete,
@@ -12,6 +14,7 @@
                   } %></li>
 				  
 </ul>
+
 
 <h2>Books</h2>
 <table>

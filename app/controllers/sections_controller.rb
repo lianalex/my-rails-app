@@ -11,6 +11,13 @@ class SectionsController < ApplicationController
     @section.destroy
     redirect_to word_path(@word), status: :see_other
   end
+
+  def export
+    @word = Word.find(params[:word_id])
+    @section = word.sections.find(params[:id])
+    @section.export
+    redirect_to word_path(@word), status: :see_other
+  end
   
   private
     def section_params

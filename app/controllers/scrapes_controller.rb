@@ -1,7 +1,10 @@
 class ScrapesController < ApplicationController
+
   def index
-	@scrapes = Scrape.all
+	  @scrapes = Scrape.all
+
   end
+  
   def show
     @scrape = Scrape.find(params[:id])
   end
@@ -43,6 +46,38 @@ class ScrapesController < ApplicationController
   def edit
     @scrape = Scrape.find(params[:id])
   end
+
+  # def export
+  #   @scrape = Scrape.find(params[:id])
+
+  #   require 'csv' 
+  #   file = "#{Rails.root}/public/my-rails-app/Exports/BookScrapes.csv"
+  #   books = Book.order(:first_name)
+  #   headers = ["Book Title", "Book Price", "Book Availability"]
+  #   CSV.open(file, 'w', write_headers: true, headers: headers) do |writer|
+  #     books.each do |book| 
+  #     writer << [bookTitle, bookPrice, bookAvailability] 
+  #     end
+  #   end
+
+
+  def export
+    @scrape = Scrape.find(params[:id])
+  page_url = "http://localhost:3000/scrapes/" + params[:id].to_s
+  response = HTTParty.get(page_url)
+    @csvname = @scrape.title + ".csv"
+  puts "\n\nExporting...\n\n"
+  
+  File.open("Exports/BookScrapes/" + @scrape.title + ".csv", "w") {
+    |file| 
+    file.write("TITLE, PRICE, AVAILABILITY \n")
+    @scrape.books.each do |book| 
+      file.write(book.title + "," + book.availability + "," + book.price + "\n")
+    end
+  }
+  end
+
+
 
   def update
     @scrape = Scrape.find(params[:id])
