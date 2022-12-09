@@ -2,23 +2,23 @@
 
 ## INSTALLATION INSTRUCTIONS
 
-1) Check for Ruby version:
+1) Check for Ruby version-
 run: ruby -v
 ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x64-mingw-ucrt]
 
 2) If not installed, download at: https://www.ruby-lang.org/en/downloads/
 
-3) Check Gem version:
+3) Check Gem version-
 run: gem -v
 3.3.7
 
-4) If not up-to-date:
+4) If not up-to-date-
 run: gem update
 
-5) Install Ruby on Rails:
+5) Install Ruby on Rails-
 run: gem install rails
 
-6) Check Rails version:
+6) Check Rails version-
 run: rails -v
 Rails 7.0.4
 
@@ -34,13 +34,13 @@ Rails 7.0.4
   
 run: bundle install
 
-3)Set up the database schema:
+3)Set up the database schema-
 run: rake db:setup 
 
-4) Migrate the database data:
+4) Migrate the database data-
 run: rake db:migrate
 
-5) Run project:
+5) Run project-
 run: rails server
 
 6) Go to localhost:3000
