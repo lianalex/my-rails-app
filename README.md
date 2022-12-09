@@ -30,6 +30,50 @@ run: rails -v
 
 Rails 7.0.4
 
+## macOS INSTALL INSTRUCTIONS
+
+~Ruby versions 2.0 and above are included by default in macOS releases since at least El Capitan (10.11).
+
+1) Install HomeBrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+2) Install chruby and the latest Ruby with ruby-install
+brew install chruby ruby-install
+
+3) Install the latest Ruby version
+ruby-install 3.3.7 (current version)
+
+4) Configure your shell
+echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.zshrc
+echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" >> ~/.zshrc
+echo "chruby ruby-3.1.3" >> ~/.zshrc
+
+5) Check current Ruby version
+ruby -v
+
+6) Check Gem version-
+
+run: gem -v
+
+3.3.7
+
+7) If not up-to-date-
+
+run: gem update
+
+8) Install Ruby on Rails-
+
+run: gem install rails
+
+9) Check Rails version-
+
+run: rails -v
+
+Rails 7.0.4
+
+
+
+
 ## BUILD INSTRUCTIONS
 
 1) change directory to my-rails-app folder 
