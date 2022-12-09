@@ -70,9 +70,10 @@ class ScrapesController < ApplicationController
   
   File.open("Exports/BookScrapes/" + @scrape.title + ".csv", "w") {
     |file| 
+	file.write("sep=;\n")
     file.write("TITLE, PRICE, AVAILABILITY \n")
     @scrape.books.each do |book| 
-      file.write(book.title + "," + book.availability + "," + book.price + "\n")
+      file.write(book.title + ";" + book.price + ";" + book.availability + "\n")
     end
   }
   end
