@@ -22,7 +22,7 @@ run: gem install rails
 run: rails -v
 Rails 7.0.4
 
-##Build Instructions
+## BUILD INSTRUCTIONS
 
 1) change directory to my-rails-app folder 
 
@@ -46,11 +46,11 @@ run: rails server
 6) Go to localhost:3000
 
 
-##How to Create a New Rails Project:
+## HOW TO CREATE A NEW RAILS PROJECT
 rails new [appName]: Creates a Rails project with name [appName]. </br>
 If you got error at this step, open the Gemfile in C:\Users\\[userName]\\[appName], change the line to gem 'tzinfo-data'
 
-##Process to update a model:
+## HOW TO UPDATE A MODEL
 1) rake db:drop:_unsafe
 2) Update db/schema.rb
 3) Update db/migrate/[model migration]
