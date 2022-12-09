@@ -1,6 +1,6 @@
 # README
 
-## Installation Instructions
+## INSTALLATION INSTRUCTIONS
 
 1) Check for Ruby version:
 run: ruby -v
