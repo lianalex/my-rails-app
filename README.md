@@ -3,23 +3,23 @@
 ## Installation Instructions
 
 1) Check for Ruby version:
-ruby -v
+run: ruby -v
 ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x64-mingw-ucrt]
 
 2) If not installed, download at: https://www.ruby-lang.org/en/downloads/
 
 3) Check Gem version:
-gem -v
+run: gem -v
 3.3.7
 
 4) If not up-to-date:
-gem update
+run: gem update
 
 5) Install Ruby on Rails:
-gem install rails
+run: gem install rails
 
 6) Check Rails version:
-rails -v
+run: rails -v
 Rails 7.0.4
 
 ##Build Instructions
@@ -27,18 +27,21 @@ Rails 7.0.4
 1) change directory to my-rails-app folder 
 
 2) Install the dependencies for the project: 
+  
   -If on Mac comment line 40 in the Gemfile in the main directory: gem "tzinfo-data"
+  
   -If on Mac uncomment line 41 in the Gemfile in the main directory: #gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-bundle install
+  
+run: bundle install
 
 3)Set up the database schema:
-rake db:setup 
+run: rake db:setup 
 
 4) Migrate the database data:
-rake db:migrate
+run: rake db:migrate
 
 5) Run project:
-rails server
+run: rails server
 
 6) Go to localhost:3000
 
